@@ -4,7 +4,7 @@
     <p>昵称：{{gtUser.name}}</p>
     <p>邮箱：{{gtUser.email}}</p>
     <p>创建时间：{{gtUser.created_at}}</p>
-    <p>GitHub地址：{{gtUser.html_url}}</p>
+    <p>GitHub地址：<a :href="gtUser.html_url" target="_blank">{{gtUser.html_url}}</a></p>
   </div>
 </template>
 
@@ -34,11 +34,9 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-  .github {
-    .avator_url{
-      width: 200px;
-      height: 200px;
-    }
-  }
+<style scoped>
+.avator_url{
+  width: 200px;
+  height: 200px;
+}
 </style>
