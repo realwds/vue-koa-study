@@ -7,7 +7,7 @@
     <br/>
     <a :href="githubUrl" target="_blank">LOIGN TO GITHUB</a> 
     <br/><br/>
-    <router-link to="GitHub">GITHUB PAGE</router-link>  
+    <router-link :to="{ path:'/GitHub', query:{ access_token: '092efc4d0eaf8af0cba699df42ffcf357a0e791a'}}">GITHUB PAGE</router-link>  
   </div>
 </template>
 
