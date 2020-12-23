@@ -2,19 +2,29 @@
   <div class="hello">
     <img src="../assets/logo.png">
     <h1>{{ msg }}</h1>
-    <button @click="testGET">testGET Method</button>
-    <button @click="testPOST">testPOST Method</button>
+    <!-- <button @click="testGET">testGET Method</button>
+    <button @click="testPOST">testPOST Method</button> -->
+    <br/>
+    <a :href="githubUrl" target="_blank">LOIGN TO GITHUB</a> 
+    <br/><br/>
+    <router-link to="GitHub">GITHUB PAGE</router-link>  
   </div>
 </template>
 
 <script>
-import { GET, POST } from '../api/api'
+import { GET, POST } from '@/api/api'
 
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
+      msg: 'Welcome to vue-koa-study',
+      githubParams: {
+        client_id: '9801841099bc8a201d2f',
+        client_secret: '36580299c33ae6c26cbccdf90614adf0eaa7d3ec',
+        authorize_uri: 'https://github.com/login/oauth/authorize',
+        redirect_uri: 'http://localhost:3000/github/redirect'
+      },
       getParams: {
         id:123
       },
@@ -22,7 +32,12 @@ export default {
         "name":"realwds",
         "age":"261",
         "sex":"male"
-      }
+      },
+    }
+  },
+  computed: {
+    githubUrl(){
+      return `${this.githubParams.authorize_uri}?client_id=${this.githubParams.client_id}&redirect_uri=${this.githubParams.redirect_uri}`
     }
   },
   methods: {
