@@ -29,7 +29,6 @@ export default {
   },
   computed: {
     githubUrl(){
-      console.log(process.env)
       return `${ process.env.VUE_APP_AUTHORIZE_URI }?client_id=${ process.env.VUE_APP_CLIENT_ID }&redirect_uri=${ process.env.VUE_APP_REDIRECT_URI }`
     }
   },
