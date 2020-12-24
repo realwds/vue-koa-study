@@ -10,10 +10,10 @@ module.exports = merge(prodEnv, {
   VUE_APP_GIT_API: '"http://localhost:3000"',
 
   // github Client ID
-  VUE_APP_CLIENT_ID: '"9801841099bc8a201d2f"',
+  VUE_APP_CLIENT_ID: '"*********************"',
 
   // // github Client secrets
-  VUE_APP_CLIENT_SECRET: '"36580299c33ae6c26cbccdf90614adf0eaa7d3ec"',
+  VUE_APP_CLIENT_SECRET: '"*********************"',
 
   // // github 认证地址
   VUE_APP_AUTHORIZE_URI: '"https://github.com/login/oauth/authorize"',
