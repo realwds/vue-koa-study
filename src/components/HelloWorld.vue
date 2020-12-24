@@ -5,7 +5,8 @@
     <!-- <button @click="testGET">testGET Method</button>
     <button @click="testPOST">testPOST Method</button> -->
     <br/>
-    <a :href="githubUrl" target="_blank">LOIGN TO GITHUB</a>
+    <p><a :href="githubUrl" target="_blank">LOIGN TO GITHUB</a></p>
+    <p><a :href="giteeUrl" target="_blank">LOIGN TO GITEE</a></p>
   </div>
 </template>
 
@@ -30,6 +31,9 @@ export default {
   computed: {
     githubUrl(){
       return `${ process.env.VUE_APP_AUTHORIZE_URI }?client_id=${ process.env.VUE_APP_CLIENT_ID }&redirect_uri=${ process.env.VUE_APP_REDIRECT_URI }`
+    },
+    giteeUrl(){
+      return `${ process.env.VUE_APP_GITEE_AUTHORIZE_URI }?client_id=${ process.env.VUE_APP_GITEE_CLIENT_ID }&redirect_uri=${ process.env.VUE_APP_GITEE_REDIRECT_URI }&response_type=code`
     }
   },
   methods: {

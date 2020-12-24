@@ -1,17 +1,17 @@
 <template>
-  <div class="github">
+  <div class="gitee">
     <div v-if="gtUser.name">
-      <h1>GitHub 平台</h1>
+      <h1>Gitee 平台</h1>
       <img class="avator_url" :src="gtUser.avatar_url" alt />
       <p>昵称：{{ gtUser.name }}</p>
       <p>邮箱：{{ gtUser.email }}</p>
       <p>创建时间：{{ gtUser.created_at }}</p>
       <p>
-        GitHub地址：<a :href="gtUser.html_url" target="_blank">{{
+        GitEe地址：<a :href="gtUser.html_url" target="_blank">{{
           gtUser.html_url
         }}</a>
       </p>
-      <p>
+      <!-- <p>
         <router-link
           :to="{
             path: '/GitHubCDN',
@@ -22,17 +22,17 @@
           }"
           >GITUB CDN</router-link
         >
-      </p>
+      </p> -->
     </div>
     <div v-else>数据加载中......</div>
   </div>
 </template>
 
 <script>
-import { getUser } from "@/api/api";
+import { getGiteeUser } from "@/api/api";
 
 export default {
-  name: "GitHub",
+  name: "GitEe",
   data() {
     return {
       params: {
@@ -42,11 +42,11 @@ export default {
     };
   },
   created() {
-    this.getUser();
+    this.getGiteeUser();
   },
   methods: {
-    async getUser() {
-      const data = await getUser(this.params);
+    async getGiteeUser() {
+      const data = await getGiteeUser(this.params);
       if (!data) return;
       this.gtUser = data.data;
     },

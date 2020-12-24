@@ -9,6 +9,7 @@ module.exports = merge(prodEnv, {
   // base api
   VUE_APP_GIT_API: '"http://localhost:3000"',
 
+
   // github Client ID
   VUE_APP_CLIENT_ID: '"*********************"',
 
@@ -20,5 +21,18 @@ module.exports = merge(prodEnv, {
 
   // github 认证回调地址
   VUE_APP_REDIRECT_URI: '"http://localhost:3000/github/redirect"',
+
+
+  // gitee Client ID
+  VUE_APP_GITEE_CLIENT_ID: '"*********************"',
+
+  // gitee Client secrets
+  VUE_APP_GITEE_CLIENT_SECRET: '"*********************"',
+
+  // gitee 认证地址
+  VUE_APP_GITEE_AUTHORIZE_URI: '"https://gitee.com/oauth/authorize"',
+
+  // gitee 认证回调地址
+  VUE_APP_GITEE_REDIRECT_URI: '"http://localhost:3000/gitee/redirect"',
 
 })
