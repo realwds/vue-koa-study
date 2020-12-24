@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import GitHub from '@/components/GitHub'
-import GitHubCDN from '@/components/GitHubCDN'
-import GitHubFile from '@/components/GitHubFile'
+import GitHub from '@/components/github/GitHub'
+import GitHubCDN from '@/components/github/GitHubCDN'
+import GitHubFile from '@/components/github/GitHubFile'
 
 Vue.use(Router)
 

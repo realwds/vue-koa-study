@@ -2,7 +2,7 @@ import axios from 'axios'
 
 //创建axios的一个实例 
 var instance = axios.create({
-    baseURL: 'http://localhost:3000',
+    baseURL:  process.env.VUE_APP_GIT_API,
     timeout: 6000
 })
 

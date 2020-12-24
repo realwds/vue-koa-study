@@ -5,9 +5,7 @@
     <!-- <button @click="testGET">testGET Method</button>
     <button @click="testPOST">testPOST Method</button> -->
     <br/>
-    <a :href="githubUrl" target="_blank">LOIGN TO GITHUB</a> 
-    <br/><br/>
-    <router-link :to="{ path:'/GitHub', query:{ access_token: '092efc4d0eaf8af0cba699df42ffcf357a0e791a'}}">GITHUB PAGE</router-link>  
+    <a :href="githubUrl" target="_blank">LOIGN TO GITHUB</a>
   </div>
 </template>
 
@@ -18,26 +16,21 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to vue-koa-study',
-      githubParams: {
-        client_id: '9801841099bc8a201d2f',
-        client_secret: '36580299c33ae6c26cbccdf90614adf0eaa7d3ec',
-        authorize_uri: 'https://github.com/login/oauth/authorize',
-        redirect_uri: 'http://localhost:3000/github/redirect'
-      },
+      msg: 'Welcome to vue-koa-git-api',
       getParams: {
-        id:123
+        id: 100
       },
       postParams: {
-        "name":"realwds",
-        "age":"261",
-        "sex":"male"
+        "name": "realwds",
+        "age": "261",
+        "sex": "male"
       },
     }
   },
   computed: {
     githubUrl(){
-      return `${this.githubParams.authorize_uri}?client_id=${this.githubParams.client_id}&redirect_uri=${this.githubParams.redirect_uri}`
+      console.log(process.env)
+      return `${ process.env.VUE_APP_AUTHORIZE_URI }?client_id=${ process.env.VUE_APP_CLIENT_ID }&redirect_uri=${ process.env.VUE_APP_REDIRECT_URI }`
     }
   },
   methods: {
@@ -54,7 +47,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1, h2 {
   font-weight: normal;
